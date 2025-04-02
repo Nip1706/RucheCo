@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Ruches</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="login">
+        <h2>Connexion</h2>
+        <input type="text" id="username" placeholder="Identifiant">
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="login()">Se connecter</button>
+    </div>
+    
+    <div id="app" style="display:none;">
+        <h2>Mes Ruchers</h2>
+        <button onclick="ajouterRucher()">Ajouter Rucher</button>
+        <ul id="ruchers-list"></ul>
+        <h3>Détails de la Ruche</h3>
+        <canvas id="tempChart"></canvas>
+        <p id="humidity"></p>
+        <p id="couvercle"></p>
+        <button onclick="inhiberAlerte()">Inhiber Alerte</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
