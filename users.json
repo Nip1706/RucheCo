@@ -1,0 +1,18 @@
+[
+    {
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "adresse": "123 Rue des Abeilles",
+        "email": "jean.dupont@example.com",
+        "identifiant": "jeand",
+        "mot_de_passe": "1234"
+    },
+    {
+        "nom": "Martin",
+        "prenom": "Sophie",
+        "adresse": "456 Rue des Miels",
+        "email": "sophie.martin@example.com",
+        "identifiant": "sophiem",
+        "mot_de_passe": "5678"
+    }
+]

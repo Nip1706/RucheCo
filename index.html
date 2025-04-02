@@ -27,5 +27,24 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        let utilisateurs;
+        fetch('users.json')
+            .then(response => response.json())
+            .then(data => utilisateurs = data);
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            const user = utilisateurs.find(u => u.identifiant === username && u.mot_de_passe === password);
+            if (user) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('app').style.display = 'block';
+            } else {
+                alert('Identifiant ou mot de passe incorrect');
+            }
+        }
+    </script>
 </body>
 </html>
