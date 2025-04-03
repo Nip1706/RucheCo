@@ -3,48 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Ruches</title>
+    <title>Gestion des Ruches - Tableau de Bord</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnCT8daDl_IHFoD6tvmrNhwNfRK8BMgWQ&callback=initMap&loading=async" async defer></script>
 </head>
 <body>
-    <div id="login">
-        <h2>Connexion</h2>
-        <input type="text" id="username" placeholder="Identifiant">
-        <input type="password" id="password" placeholder="Mot de passe">
-        <button onclick="login()">Se connecter</button>
-    </div>
-    
-    <div id="app" style="display:none;">
-        <h2>Mes Ruchers</h2>
-        <button onclick="ajouterRucher()">Ajouter Rucher</button>
-        <ul id="ruchers-list"></ul>
-        <h3>Détails de la Ruche</h3>
-        <canvas id="tempChart"></canvas>
-        <p id="humidity"></p>
-        <p id="couvercle"></p>
-        <button onclick="inhiberAlerte()">Inhiber Alerte</button>
+    <div class="dashboard-container" id="app" style="display: none;">
+        <div class="user-profile">
+            <span class="username" onclick="goToProfile()">Identifiant</span>
+            <div class="profile-image-container">
+                <img src="" alt="Photo de profil" class="profile-image">
+                <div class="online-indicator" onclick="toggleLogoutMenu()"></div>
+            </div>
+            <div class="logout-menu" id="logoutMenu" style="display: none;">
+                <button onclick="logout()">Se déconnecter</button>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="logo">Ruches App</div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-binoculars"></i> Vue d'ensemble</a>
+                <a href="ruchers.html"><i class="fas fa-map-marker-alt"></i> Ruchers</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+                <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Tableau de Bord</h2>
+            </header>
+            <div class="main-content-wrapper">
+                <section class="grid-container">
+                    <div class="data-container">
+                        <div class="data-card">
+                            <div class="data-icon"><i class="fas fa-thermometer-half temp-icon"></i></div>
+                            <div class="data-value" id="tempValue">25°C</div>
+                            <div class="data-label">Température</div>
+                            <div class="data-percentage">+2% from yesterday</div>
+                        </div>
+                        <div class="data-card">
+                            <div class="data-icon"><i class="fas fa-tint humidity-icon"></i></div>
+                            <div class="data-value" id="humidityValue">60%</div>
+                            <div class="data-label">Humidité</div>
+                            <div class="data-percentage">-1% from yesterday</div>
+                        </div>
+                    </div>
+                    <div id="map" style="height: 400px; width: 100%; border-radius: 20px;"></div>
+                </section>
+                <section class="rucher-list index-list">
+                </section>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
     <script>
-        let utilisateurs;
-        fetch('users.json')
-            .then(response => response.json())
-            .then(data => utilisateurs = data);
+        function initMap() {
+            const { Map, Marker } = google.maps;
+            const map = new Map(document.getElementById('map'), {
+                center: { lat: 48.8566, lng: 2.3522 },
+                zoom: 10
+            });
 
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            const user = utilisateurs.find(u => u.identifiant === username && u.mot_de_passe === password);
-            if (user) {
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('app').style.display = 'block';
+            fetch('ruchers.json')
+                .then(response => response.json())
+                .then(data => {
+                    const identifiantUtilisateur = localStorage.getItem('username'); // Récupérer l'identifiant de l'utilisateur connecté
+
+                    const filteredRuchers = data.filter(rucher => rucher.identifiantUtilisateur === identifiantUtilisateur); // Filtrer les ruchers
+
+                    const markers = filteredRuchers.map(rucher => {
+                        const marker = new Marker({
+                            position: rucher.position,
+                            title: rucher.title,
+                            url: rucher.url
+                        });
+
+                        marker.addListener('click', () => {
+                            updateRucherData(rucher);
+                        });
+
+                        return marker;
+                    });
+
+                    markers.forEach(marker => marker.setMap(map));
+
+                    google.maps.event.addListener(map, 'click', function (event) {
+                        markers.forEach(marker => {
+                            if (marker.getPosition().equals(event.latLng)) {
+                                window.open(marker.url);
+                            }
+                        });
+                    });
+
+                    if (filteredRuchers.length > 0) {
+                        updateRucherData(filteredRuchers[0]); // Mettre à jour avec le premier rucher filtré
+                    }
+                });
+        }
+
+        function updateRucherData(rucher) {
+            const tempElement = document.getElementById('tempValue');
+            const humidityElement = document.getElementById('humidityValue');
+            const rucherList = document.querySelector('.rucher-list');
+
+            tempElement.textContent = rucher.meteo.temperature;
+            humidityElement.textContent = rucher.meteo.humidity;
+
+            rucherList.innerHTML = '<h1>Anomalies des ruches</h1>';
+
+            rucher.ruches.forEach(ruche => {
+                let isCritical = false;
+                let criticalData = [];
+
+                if (parseFloat(ruche.temperature) < 22 || parseFloat(ruche.temperature) > 24) {
+                    isCritical = true;
+                    criticalData.push(`Température: ${ruche.temperature}`);
+                }
+                if (parseFloat(ruche.humidity) < 50 || parseFloat(ruche.humidity) > 70) {
+                    isCritical = true;
+                    criticalData.push(`Humidité: ${ruche.humidity}`);
+                }
+                if (ruche.couvercle.toLowerCase() !== 'fermé') {
+                    isCritical = true;
+                    criticalData.push(`Couvercle: ${ruche.couvercle}`);
+                }
+
+                if (isCritical) {
+                    const rucheCard = document.createElement('div');
+                    rucheCard.className = 'data-card critical';
+                    rucheCard.innerHTML = `
+                        <div class="data-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="data-value">${ruche.nom}</div>
+                        <div class="data-label">${criticalData.join(', ')}</div>
+                    `;
+                    rucherList.appendChild(rucheCard);
+                }
+            });
+        }
+
+        function toggleLogoutMenu() {
+            const logoutMenu = document.getElementById('logoutMenu');
+            if (logoutMenu) {
+                logoutMenu.style.display = logoutMenu.style.display === 'none' ? 'block' : 'none';
             } else {
-                alert('Identifiant ou mot de passe incorrect');
+                console.error("L'élément logoutMenu n'a pas été trouvé.");
             }
         }
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('username');
+            window.location.href = 'login.html';
+        }
+
+        function goToProfile() {
+            window.location.href = 'profil.html';
+        }
+
+        if (localStorage.getItem('loggedIn') !== 'true') {
+    window.location.href = 'login.html';
+} else {
+    document.getElementById('app').style.display = 'flex';
+    const username = localStorage.getItem('username');
+    document.querySelector('.username').textContent = username;
+
+    // Récupérer la photo de profil depuis users.json
+    fetch('users.json')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(u => u.identifiant === username);
+            if (user) {
+                document.querySelector('.profile-image').src = user.photo;
+            }
+        });
+}
     </script>
 </body>
 </html>

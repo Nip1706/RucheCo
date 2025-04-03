@@ -1,0 +1,455 @@
+[
+    {
+        "position": { "lat": 48.8913, "lng": 2.3472 },
+        "title": "Rucher Numéros",
+        "url": "https://www.ruches-lavillette.com/",
+        "ruches": [
+            {
+                "nom": "Ruche 1descriptible",
+                "temperature": "23°C",
+                "humidity": "55%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche 2bout",
+                "temperature": "24°C",
+                "humidity": "58%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche 3tskytuleski",
+                "temperature": "22°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche 4",
+                "temperature": "25°C",
+                "humidity": "60%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche 5",
+                "temperature": "26°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "21°C",
+            "humidity": "60%"
+        },
+        "identifiantUtilisateur": "yunat",
+        "adresse": "211 Avenue Jean Jaurès, 75019 Paris"
+    },
+    {
+        "position": { "lat": 48.9172, "lng": 2.2345 },
+        "title": "Rucher Commerce",
+        "url": "https://ruche-entreprise.net/?utm_source=GMB&utm_campaign=SWB-Bouton",
+        "ruches": [
+            {
+                "nom": "Ruche Amazon",
+                "temperature": "25°C",
+                "humidity": "60%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Betclic",
+                "temperature": "26°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Conrado",
+                "temperature": "27°C",
+                "humidity": "62%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Darty",
+                "temperature": "28°C",
+                "humidity": "61%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Engie",
+                "temperature": "29°C",
+                "humidity": "63%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche F1",
+                "temperature": "23°C",
+                "humidity": "63%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Leclerc",
+                "temperature": "22°C",
+                "humidity": "63%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "23°C",
+            "humidity": "65%"
+        },
+        "identifiantUtilisateur": "nipunap",
+        "adresse": "2 Rue de la Ferme, 92200 Nanterre"
+    },
+    {
+        "position": { "lat": 48.8636, "lng": 2.3319 },
+        "title": "Rucher Pourri",
+        "url": "https://www.synergiapiculture.com/boutique-au-rucher-paris-materiel-apicole-et-selection-de-miels/",
+        "ruches": [
+            {
+                "nom": "Ruche Xylophone",
+                "temperature": "22°C",
+                "humidity": "58%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Yacht",
+                "temperature": "23°C",
+                "humidity": "60%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Zorro",
+                "temperature": "24°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Wombat",
+                "temperature": "25°C",
+                "humidity": "61%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Viking",
+                "temperature": "26°C",
+                "humidity": "62%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "22°C",
+            "humidity": "62%"
+        },
+        "identifiantUtilisateur": "yunat",
+        "adresse": "8 Rue du Faubourg Saint-Antoine, 75012 Paris"
+    },
+    {
+        "position": { "lat": 48.8333, "lng": 2.3233 },
+        "title": "Rucher Math",
+        "url": "https://ruches-montsouris.paris/",
+        "ruches": [
+            {
+                "nom": "Ruche Alpha",
+                "temperature": "24°C",
+                "humidity": "62%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Beta",
+                "temperature": "25°C",
+                "humidity": "61%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Gamma",
+                "temperature": "26°C",
+                "humidity": "63%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Delta",
+                "temperature": "27°C",
+                "humidity": "64%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Epsilon",
+                "temperature": "28°C",
+                "humidity": "65%",
+                "couvercle": "Ouvert"
+            }
+        ],
+        "meteo": {
+            "temperature": "24°C",
+            "humidity": "68%"
+        },
+        "identifiantUtilisateur": "nipunap",
+        "adresse": "2 Avenue Reille, 75014 Paris"
+    },
+    {
+        "position": { "lat": 48.8167, "lng": 2.3500 },
+        "title": "Rucher Athènes",
+        "url": "https://rucheentreprise.fr/?utm_source=google&utm_medium=organic&utm_campaign=gmb-listing",
+        "ruches": [
+            {
+                "nom": "Ruche Delta",
+                "temperature": "26°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Epsilon",
+                "temperature": "27°C",
+                "humidity": "56%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Zeta",
+                "temperature": "28°C",
+                "humidity": "58%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Eta",
+                "temperature": "29°C",
+                "humidity": "59%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Theta",
+                "temperature": "30°C",
+                "humidity": "60%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "25°C",
+            "humidity": "70%"
+        },
+        "identifiantUtilisateur": "yunat",
+        "adresse": "12 Rue de l'Arrivée, 75015 Paris"
+    },
+    {
+        "position": { "lat": 48.8713, "lng": 2.3172 },
+        "title": "Rucher Antique",
+        "url": "https://www.exemple.com/rucher6",
+        "ruches": [
+            {
+                "nom": "Ruche Sigma",
+                "temperature": "25°C",
+                "humidity": "59%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Tau",
+                "temperature": "26°C",
+                "humidity": "60%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Upsilon",
+                "temperature": "27°C",
+                "humidity": "61%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Phi",
+                "temperature": "28°C",
+                "humidity": "62%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Chi",
+                "temperature": "29°C",
+                "humidity": "63%",
+                "couvercle": "Ouvert"
+            }
+        ],
+        "meteo": {
+            "temperature": "24°C",
+            "humidity": "65%"
+        },
+        "identifiantUtilisateur": "nipunap",
+        "adresse": "5 Rue de la Liberté, 92100 Boulogne-Billancourt"
+    },
+    {
+        "position": { "lat": 48.8813, "lng": 2.3672 },
+        "title": "Rucher Grecs",
+        "url": "https://www.exemple.com/rucher7",
+        "ruches": [
+            {
+                "nom": "Ruche Phi",
+                "temperature": "28°C",
+                "humidity": "55%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Chi",
+                "temperature": "29°C",
+                "humidity": "56%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Psi",
+                "temperature": "30°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Omega",
+                "temperature": "31°C",
+                "humidity": "58%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Rolex",
+                "temperature": "32°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Beta",
+                "temperature": "33°C",
+                "humidity": "60%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Alpha",
+                "temperature": "32°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Gamma",
+                "temperature": "31°C",
+                "humidity": "58%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Delta",
+                "temperature": "30°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Epsilon",
+                "temperature": "29°C",
+                "humidity": "56%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Zeta",
+                "temperature": "28°C",
+                "humidity": "55%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Eta",
+                "temperature": "27°C",
+                "humidity": "54%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Theta",
+                "temperature": "26°C",
+                "humidity": "53%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "26°C",
+            "humidity": "68%"
+        },
+        "identifiantUtilisateur": "yunat",
+        "adresse": "15 Rue du Commerce, 75015 Paris"
+    },
+
+    {
+        "position": { "lat": 48.8713, "lng": 2.3172 },
+        "title": "Rucher des Fleurs",
+        "url": "https://www.exemple.com/rucher8",
+        "ruches": [
+            {
+                "nom": "Ruche Rose",
+                "temperature": "28°C",
+                "humidity": "55%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Tulipe",
+                "temperature": "29°C",
+                "humidity": "56%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Pivoine",
+                "temperature": "30°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Lys",
+                "temperature": "31°C",
+                "humidity": "58%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Iris",
+                "temperature": "32°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Violette",
+                "temperature": "33°C",
+                "humidity": "60%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Coquelicot",
+                "temperature": "32°C",
+                "humidity": "59%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Marguerite",
+                "temperature": "31°C",
+                "humidity": "58%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Tournesol",
+                "temperature": "30°C",
+                "humidity": "57%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Jasmin",
+                "temperature": "29°C",
+                "humidity": "56%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Orchidée",
+                "temperature": "28°C",
+                "humidity": "55%",
+                "couvercle": "Fermé"
+            },
+            {
+                "nom": "Ruche Lavande",
+                "temperature": "27°C",
+                "humidity": "54%",
+                "couvercle": "Ouvert"
+            },
+            {
+                "nom": "Ruche Anémone",
+                "temperature": "26°C",
+                "humidity": "53%",
+                "couvercle": "Fermé"
+            }
+        ],
+        "meteo": {
+            "temperature": "26°C",
+            "humidity": "68%"
+        },
+        "identifiantUtilisateur": "yunat",
+        "adresse": "5 Rue de la Liberté, 92100 Boulogne-Billancourt"
+    }
+]

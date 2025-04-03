@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails des ruches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Ruches App</div>
+            <a href="ruchers.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+            <nav>
+                <a href="index.html"><i class="fas fa-binoculars"></i> Vue d'ensemble</a>
+                <a href="ruchers.html" class="active"><i class="fas fa-map-marker-alt"></i> Ruchers</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+                <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Détails des ruches</h2><i class="fas fa-plus-circle" id="add-ruche-icon"></i>
+            </header>
+            <div class="main-content-wrapper">
+                <section class="ruche-grid">
+                    <div id="ruches-grid-container"></div>
+                    <div id="ruches-grid-container2">
+                        <canvas id="rucherChart"></canvas>
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <div id="add-ruche-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajouter une ruche</h2>
+            <form id="add-ruche-form">
+                <label for="nom">Nom de la ruche :</label>
+                <input type="text" id="nom" name="nom" required><br><br>
+                <label for="temperature">Température (°C):</label>
+                <input type="number" id="temperature" name="temperature" required><br><br>
+
+                <label for="humidity">Humidité (%):</label>
+                <input type="number" id="humidity" name="humidity" required><br><br>
+
+                <label for="couvercle">Couvercle:</label>
+                <select id="couvercle" name="couvercle">
+                    <option value="fermé">Fermé</option>
+                    <option value="ouvert">Ouvert</option>
+                </select><br><br>
+
+                <button type="submit">Ajouter</button>
+            </form>
+        </div>
+    </div>
+    <script src="ruches-detail.js"></script>
+</body>
+</html>

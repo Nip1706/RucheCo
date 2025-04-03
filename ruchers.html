@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Ruchers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Ruches App</div>
+            <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+            <nav>
+                <a href="index.html"><i class="fas fa-binoculars"></i> Vue d'ensemble</a>
+                <a href="ruchers.html" class="active"><i class="fas fa-map-marker-alt"></i> Ruchers</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+                <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Gestion des Ruchers</h2>
+            </header>
+            <div class="main-content-wrapper">
+                <section class="rucher-list ruchers-list">
+                    <h1>Liste des ruchers</h1>
+                    <div id="ruchers-container"></div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+    <script src="ruchers.js"></script>
+</body>
+</html>

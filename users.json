@@ -1,18 +1,22 @@
 [
     {
-        "nom": "Dupont",
-        "prenom": "Jean",
+        "nom": "Thérèse",
+        "prenom": "Yuna",
         "adresse": "123 Rue des Abeilles",
-        "email": "jean.dupont@example.com",
-        "identifiant": "jeand",
-        "mot_de_passe": "1234"
+        "email": "yuna.therese@example.com",
+        "identifiant": "yunat",
+        "mot_de_passe": "1234",
+        "telephone": "0123456789",
+        "photo": "imgTest.webp"
     },
     {
-        "nom": "Martin",
-        "prenom": "Sophie",
+        "nom": "Payagalage",
+        "prenom": "Nipuna",
         "adresse": "456 Rue des Miels",
-        "email": "sophie.martin@example.com",
-        "identifiant": "sophiem",
-        "mot_de_passe": "5678"
+        "email": "nipuna.payagalage@example.com",
+        "identifiant": "nipunap",
+        "mot_de_passe": "5678",
+        "telephone": "0987654321",
+        "photo": "imgTest2.webp"
     }
 ]

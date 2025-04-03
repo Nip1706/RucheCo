@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphiques de la ruche</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Ruches App</div>
+            <a href="ruches-detail.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+            <nav>
+                <a href="index.html"><i class="fas fa-binoculars"></i> Vue d'ensemble</a>
+                <a href="ruchers.html" class="active"><i class="fas fa-map-marker-alt"></i> Ruchers</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Statistiques</a>
+                <a href="#"><i class="fas fa-cog"></i> Paramètres</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2 id="ruche-nom-header">Graphiques de la ruche</h2>
+            </header>
+            <div class="main-content-wrapper-graph">
+                <section class="ruche-graphs">
+                    <div class="period-selector">
+                        <button onclick="changePeriod('daily')">Journalier</button>
+                        <button onclick="changePeriod('weekly')">Hebdomadaire</button>
+                        <button onclick="changePeriod('monthly')">Mensuel</button>
+                    </div>
+                    <canvas id="temperatureChart"></canvas>
+                    <canvas id="humidityChart"></canvas>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="ruche-graph.js"></script>
+</body>
+</html>
