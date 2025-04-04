@@ -3,6 +3,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #070f26;
     color: #333;
+    overflow-x: hidden; /* Empêche le défilement horizontal par défaut */
 }
 
 .dashboard-container {
@@ -22,16 +23,18 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center; /* Centrer le logo */
 }
 
 .sidebar nav a {
     display: block;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: background-color 0.3s ease;
+    font-size: 1.1em;
 }
 
 .sidebar nav a.active, .sidebar nav a:hover {
@@ -47,10 +50,21 @@ body {
     margin-bottom: 20px;
 }
 
+.main-content header h2 {
+    font-size: 2em;
+    color: #64b5f6;
+    margin-bottom: 20px;
+}
+
+.main-content-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
 .grid-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 60%;
     gap: 20px;
 }
 
@@ -153,29 +167,6 @@ button:hover {
     color: #555;
 }
 
-.sidebar .logo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.sidebar nav a {
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
-.main-content header h2 {
-    font-size: 2em;
-    color: #64b5f6;
-    margin-bottom: 20px;
-}
-
-.grid-item {
-    padding: 25px;
-    border-radius: 12px;
-}
-
 #login {
     color: white;
     background: #101935;
@@ -233,15 +224,6 @@ button:hover {
     display: none;
 }
 
-.main-content-wrapper {
-    display: flex; /* Utilise flexbox pour la disposition en ligne */
-    gap: 20px;
-}
-
-.grid-container {
-    flex: 1; /* Prend la majeure partie de la largeur disponible */
-}
-
 #ruchers-container {
     display: flex;
     flex-wrap: wrap;
@@ -253,6 +235,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px; /* Espace entre les cartes */
+    flex: 1; /* Permet de prendre l'espace disponible */
 }
 
 .index-list {
@@ -280,9 +263,6 @@ button:hover {
     text-align: center;
 }
 
-
-
-
 .data-card.critical .data-icon i {
     color: red; /* Icône rouge */
 }
@@ -301,16 +281,6 @@ button:hover {
     right: 10px;
     display: flex;
     align-items: center;
-}
-
-.profile-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-.user-profile {
-    display: flex;
     gap: 10px;
     color: white;
 }
@@ -325,7 +295,9 @@ button:hover {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    object-fit: cover;
 }
+
 
 .online-indicator {
     position: absolute;
@@ -352,7 +324,7 @@ button:hover {
 
 .profile-info{
     color: white;
-    background-color: #2c3859;
+    background-color: #4b5a83;
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
@@ -360,11 +332,6 @@ button:hover {
 
 /* ... (Vos styles CSS existants) ... */
 
-.main-content-wrapper {
-    display: flex;
-}
-
-.rucher-list,
 .ruche-list {
     flex: 1;
     margin-right: 20px;
@@ -385,7 +352,7 @@ button:hover {
     margin-bottom: 20px;
     color: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .rucher-card h3 {
@@ -444,8 +411,6 @@ button:hover {
     height: 40%;
 }
 
-
-
 .ruche-grid{
     display: flex;
 }
@@ -464,8 +429,6 @@ button:hover {
 .period-selector {
     margin-bottom: 40px;
 }
-
-
 
 #add-ruche-icon {
     margin-left: 10px; /* Ajoute un espace entre le titre et l'icône */
@@ -511,3 +474,433 @@ button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* styles.css */
+
+/* ... (Vos styles CSS existants pour le mode sombre) ... */
+
+/* Styles pour le mode clair */
+body.light-mode {
+    background-color: #f4f4f4; /* Arrière-plan clair */
+    color: #333; /* Texte sombre */
+}
+
+body.light-mode .sidebar {
+    background-color: #e0e0e0; /* Sidebar claire */
+    color: #333;
+}
+
+body.light-mode .sidebar .logo {
+    color: #222;
+}
+
+body.light-mode .sidebar nav a {
+    color: #555;
+}
+
+body.light-mode .sidebar nav a.active,
+body.light-mode .sidebar nav a:hover {
+    background-color: #d0d0d0;
+    color: #222;
+}
+
+body.light-mode .main-content {
+    background-color: #f9f9f9; /* Contenu principal clair */
+    color: #333;
+}
+
+body.light-mode header {
+    color: #333;
+}
+
+body.light-mode .data-card {
+    color: #333;
+    background-color: #fff; /* Carte de données claire */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .data-label {
+    color: #555;
+}
+
+body.light-mode button {
+    background-color: #007bff; /* Bouton clair */
+    color: white;
+}
+
+body.light-mode button:hover {
+    background-color: #0056b3;
+}
+
+body.light-mode #login {
+    color: #333;
+    background: #f0f0f0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #login h2 {
+    color: #007bff;
+}
+
+body.light-mode #login input {
+    background-color: #e0e0e0;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+body.light-mode #login input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+body.light-mode .rucher-list h1,
+body.light-mode .ruche-list h1 {
+    color: #333;
+}
+
+body.light-mode .rucher-card h3 {
+    color: #333; /* Assurez-vous que le texte reste lisible en mode clair */
+}
+
+body.light-mode .ruche-card {
+    color: #333; /* Assurez-vous que le texte reste lisible en mode clair */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode #add-ruche-icon {
+    color: #007bff;
+}
+
+body.light-mode #add-ruche-icon:hover {
+    color: #0056b3;
+}
+
+body.light-mode .modal-content {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+body.light-mode .close {
+    color: #555;
+}
+
+body.light-mode .close:hover,
+body.light-mode .close:focus {
+    color: #000;
+}
+
+body.light-mode .username {
+    color: #333; /* Exemple : Couleur du texte sombre en mode clair */
+    /* Vous pouvez ajouter d'autres styles spécifiques au mode clair pour .username ici */
+}
+
+/* ... Ajoutez ici les styles pour tous les autres éléments de votre site en mode clair ... */
+/* profil.css (ou styles.css) */
+
+/* Styles existants pour le profil (si vous en avez) */
+
+.profile-section {
+    padding: 20px;
+    background-color: #2c3859; /* Couleur d'arrière-plan de la section */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Ajout de marge en bas pour l'exemple */
+}
+
+.profile-section h1 {
+    color: white;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-container {
+    display: flex;
+    gap: 20px; /* Espace entre les deux divs */
+    align-items: flex-start; /* Aligner les divs en haut */
+}
+
+.profile-details {
+    background-color: #4b5a83;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Prend l'espace disponible */
+}
+
+.profile-image-container {
+    position: relative;
+    width: 60px; /* Reduced image container size */
+    height: 60px; /* Reduced image container size */
+    border-radius: 40%;
+    overflow: hidden;
+    margin-bottom: 10px; /* Adjust margin if needed */
+}
+
+.profile-image {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.online-indicator {
+    position: absolute;
+    bottom: 8px; /* Adjust to move it slightly below the edge */
+    right: 12px;  /* Adjust to move it slightly to the right edge */
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border-radius: 50%;
+    border: 2px solid white; /* The white outline you mentioned */
+}
+
+.profile-info p {
+    margin-bottom: 8px;
+    color: white;
+}
+
+.profile-info strong {
+    font-weight: bold;
+    color: white;
+}
+
+.rucher-stats {
+    background-color: #4b5a83;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Prend l'espace disponible */
+}
+
+.rucher-stats h3 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.rucher-stats p {
+    color: white;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1092px) {
+    .rucher-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 40%;
+        height: 200px;
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Media Query pour les écrans de taille tablette et plus petits (max-width: 992px) */
+@media (max-width: 992px) {
+    body {
+        overflow-x: hidden; /* Empêche le défilement horizontal sur le corps */
+    }
+    .dashboard-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        min-width: 250px; /* Largeur minimale */
+        max-width: 100%; /* Largeur maximale */
+        margin-bottom: 20px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        order: 1; /* Placer la sidebar en première position */
+    }
+
+    /* Modification de .user-profile pour les écrans plus petits */
+    .user-profile {
+        position: static; /* Retirer le positionnement absolu */
+        display: flex;
+        justify-content: center; /* Centrer horizontalement */
+        align-items: center;
+        gap: 10px;
+        color: white;
+        padding: 10px 0; /* Ajouter un peu de marge verticale */
+        margin-bottom: 15px; /* Ajouter de l'espace en dessous */
+        background-color: rgba(0, 0, 0, 0.3); /* Ajouter un arrière-plan subtil si nécessaire */
+        border-radius: 5px;
+        order: 0; /* Le placer avant la sidebar par défaut dans le flux de colonne */
+    }
+
+    .sidebar .logo {
+        margin-bottom: 0;
+    }
+
+    .sidebar nav {
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .sidebar nav a {
+        padding: 10px;
+        margin-bottom: 0;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .main-content {
+        padding: 15px;
+        order: 3; /* Placer le contenu principal en troisième position */
+    }
+
+    .main-content-wrapper {
+        flex-direction: column;
+    }
+
+    .data-container {
+        flex-direction: column;
+        flex: 0 0 auto;
+    }
+
+    .data-container .data-card {
+        margin-bottom: 15px;
+    }
+
+    .grid-container {
+        flex-direction: column;
+    }
+
+    .general-graph {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #ruches-grid-container,
+    #ruches-grid-container2 {
+        width: 100%;
+    }
+
+    .ruche-grid {
+        flex-direction: column;
+    }
+
+    .ruche-list {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #ruchers-container > * { /* Cibler les enfants directs */
+        width: 100%; /* Faire en sorte que les enfants prennent toute la largeur */
+        box-sizing: border-box; /* Inclure padding et border dans la largeur */
+    }
+
+    
+
+    /* Styles pour le profile-container en dessous de la sidebar */
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        order: 2; /* Placer le conteneur de profil en deuxième position */
+    }
+
+    .profile-image-container {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+}
+
+/* Media Query pour les écrans de smartphone (max-width: 576px) */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden; /* Empêche le défilement horizontal sur le corps */
+    }
+    .sidebar {
+        flex-direction: column;
+    }
+
+    .sidebar nav {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .sidebar nav a {
+        margin-bottom: 5px;
+        font-size: 0.95em;
+        text-align: center;
+    }
+
+    .profile-image-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info p {
+        font-size: 0.9em;
+    }
+
+    .user-profile {
+        /* Vous pouvez faire d'autres ajustements pour les smartphones ici si nécessaire */
+        font-size: 0.9em;
+        gap: 5px;
+    }
+
+    .profile-image-container {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Media Query pour les très petits écrans (max-width: 360px) */
+@media (max-width: 360px) {
+    body {
+        overflow-x: hidden; /* Empêche le défilement horizontal sur le corps */
+    }
+    .sidebar .logo {
+        font-size: 1.2em;
+    }
+
+    .sidebar nav a {
+        font-size: 0.9em;
+    }
+
+    .main-content header h2 {
+        font-size: 1.8em;
+    }
+
+    .profile-image-container {
+        width: 70px;
+        height: 70px;
+    }
+    .profile-info p {
+        font-size: 0.85em;
+    }
+
+    .user-profile .username {
+        font-size: 0.8em;
+    }
+
+    .profile-image-container {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+

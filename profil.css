@@ -1,0 +1,105 @@
+/* profil.css */
+
+.profile-container {
+    display: flex; /* Active Flexbox pour aligner les éléments enfants */
+    align-items: center; /* Aligne verticalement les éléments au centre */
+    background-color: #2c3859; /* Couleur de fond pour le conteneur */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Marge en bas pour séparer des autres sections */
+    color: white; /* Couleur du texte par défaut dans ce conteneur */
+}
+
+.profile-image-container {
+    flex: 0 0 auto; /* Ne pas grandir ni rétrécir, taille automatique basée sur le contenu */
+    width: 45%; /* Largeur désirée pour l'image */
+    height: 300px; /* Hauteur désirée pour l'image (pour un cercle) */
+    border-radius: 50%; /* Pour rendre l'image circulaire */
+    overflow: hidden; /* Empêche l'image de dépasser du cercle */
+    margin-right: 20px; /* Espacement entre l'image et les infos */
+    position: relative; /* Pour positionner l'indicateur en ligne */
+}
+
+.profile-image {
+    display: block; /* Supprime l'espace supplémentaire en bas de l'image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir le conteneur en conservant les proportions */
+}
+
+.profile-info {
+    flex: 1; /* Prend tout l'espace disponible à droite de l'image */
+    /* Vous pouvez ajouter d'autres styles pour les informations ici */
+}
+
+.profile-info p {
+    margin-bottom: 8px;
+}
+
+.profile-info strong {
+    font-weight: bold;
+}
+
+.online-indicator {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Media Query pour les écrans de taille tablette et plus petits (max-width: 992px) */
+@media (max-width: 992px) {
+    body {
+        overflow-x: hidden;
+    }
+    .profile-container {
+        flex-direction: column; /* Empiler l'image et les infos */
+        align-items: center; /* Centrer horizontalement */
+        text-align: center; /* Centrer le texte */
+        padding: 15px;
+    }
+
+    .profile-image-container {
+        width: 60%; /* Ajuster la largeur sur les tablettes */
+        height: auto; /* Laisser la hauteur s'ajuster pour garder les proportions */
+        max-width: 200px; /* Limiter la largeur maximale de l'image */
+        border-radius: 50%; /* Garder l'image circulaire */
+        margin-right: 0; /* Supprimer la marge à droite */
+        margin-bottom: 15px; /* Ajouter de l'espace en dessous */
+    }
+
+    .profile-info {
+        text-align: center;
+    }
+}
+
+/* Media Query pour les écrans de smartphone (max-width: 576px) */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden;
+    }
+    .profile-container {
+        padding: 10px;
+    }
+
+    .profile-image-container {
+        width: 70%; /* Prendre plus de largeur sur les smartphones */
+        max-width: 150px;
+    }
+}
+
+/* Media Query pour les très petits écrans (max-width: 360px) */
+@media (max-width: 360px) {
+    body {
+        overflow-x: hidden;
+    }
+    .profile-image-container {
+        width: 80%;
+        max-width: 120px;
+    }
+}

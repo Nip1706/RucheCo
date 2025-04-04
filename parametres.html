@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="parametres.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">Ruches App</div>
+            <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+            <nav>
+                <a href="index.html"><i class="fas fa-binoculars"></i> Vue d'ensemble</a>
+                <a href="ruchers.html"><i class="fas fa-map-marker-alt"></i> Ruchers</a>
+                <a href="parametres.html" class="active"><i class="fas fa-cog"></i> Paramètres</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Paramètres</h2>
+            </header>
+            <div class="main-content-wrapper">
+                <section class="settings-section">
+                    <h1>Paramètres de l'application</h1>
+                    <div class="setting-item theme-switch-wrapper">
+                        <label for="theme-toggle-checkbox"><i class="fas fa-sun"></i> Mode Clair</label>
+                        <label class="theme-switch">
+                            <input type="checkbox" id="theme-toggle-checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="parametres.js"></script>
+</body>
+</html>

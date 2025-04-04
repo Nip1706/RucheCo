@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil de l'utilisateur</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="profil.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -13,8 +13,8 @@
             <div class="logo">Ruches App</div>
             <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
             <nav>
-                <a href="profil.html"><i class="fas  fa-user"></i> Profil</a>
-                <a href="#"><i class="fas fa-cog"></i> Paramètres du compte</a>
+                <a href="profil.html" class="active"><i class="fas  fa-user"></i> Profil</a>
+                <a href="parametres.html"><i class="fas fa-cog"></i> Paramètres du compte</a>
                 <a href="#"><i class="fas fa-file"></i> Documents</a>
             </nav>
         </aside>
@@ -23,9 +23,10 @@
                 <h2>Profil de l'utilisateur</h2>
             </header>
             <div class="main-content-wrapper">
-                <div class="profile-details">
+                <div class="profile-container">
                     <div class="profile-image-container">
                         <img src="" alt="Photo de profil" class="profile-image">
+                        <span class="online-indicator"></span>
                     </div>
                     <div class="profile-info">
                         <p><strong>Nom :</strong> <span id="nom"></span></p>
